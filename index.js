@@ -53,7 +53,9 @@ module.exports = function(ret, pack, settings, opt) {
     (conf.ignore || []).forEach(function(ignore) {
         conf.ignoreDict[ignore] = 1;
     });
-
+    // idMaps 是在hook-lego中配置的
+    conf.idMaps = fis.get('idMaps') || {};
+    
     Object.keys(files).forEach(function(subpath) {
         var file = files[subpath];
 
